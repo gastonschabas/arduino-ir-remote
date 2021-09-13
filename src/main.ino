@@ -56,47 +56,49 @@ void loop() {
     lcd.setCursor(0,0);
     lcd.print("button: ");
     Serial.print("button: ");
-    
-    //Serial.print("Code: ");
-    //Serial.println(results.value, HEX); //prints the value a a button press     
+    Serial.println(results.value, HEX); //prints the value a a button press     
+
     switch(results.value) {
-      case 0xFD30CF: 
+      /**
+       * codes for IR Remote from Tinkercad
+       */
+      case 0xFD30CF:
         Serial.println("0");
         lcd.print("0");
         break;
-      case 0xFD08F7: 
+      case 0xFD08F7:
         Serial.println("1");
         lcd.print("1");
         break;
-      case 0xFD8877: 
+      case 0xFD8877:
         Serial.println("2");
         lcd.print("2");
         break;
-      case 0xFD48B7: 
+      case 0xFD48B7:
         Serial.println("3");
         lcd.print("3");
         break;
-      case 0xFD28D7: 
+      case 0xFD28D7:
         Serial.println("4");
         lcd.print("4");
         break;
-      case 0xFDA857: 
+      case 0xFDA857:
         Serial.println("5");
         lcd.print("5");
         break;
-      case 0xFD6897: 
+      case 0xFD6897:
         Serial.println("6");
         lcd.print("6");
         break;
-      case 0xFD18E7: 
+      case 0xFD18E7:
         Serial.println("7");
         lcd.print("7");
         break;
-      case 0xFD9867: 
+      case 0xFD9867:
         Serial.println("8");
         lcd.print("8");
         break;
-      case 0xFD58A7: 
+      case 0xFD58A7:
         Serial.println("9");
         lcd.print("9");
         break;
@@ -150,6 +152,95 @@ void loop() {
         Serial.println("ST/REPT");
         lcd.print("ST/REPT");
         break;
+        
+      /**
+       * codes for IR Remote from arduino starter kit. Generic one with no brand. It has the label Car MP3
+       */
+      case 0xFF6897:
+        Serial.println("0");
+        lcd.print("0");
+        break;
+      case 0xFF30CF:
+        Serial.println("1");
+        lcd.print("1");
+        break;
+      case 0xFF18E7:
+        Serial.println("2");
+        lcd.print("2");
+        break;
+      case 0xFF7A85:
+        Serial.println("3");
+        lcd.print("3");
+        break;
+      case 0xFF10EF:
+        Serial.println("4");
+        lcd.print("4");
+        break;
+      case 0xFF38C7:
+        Serial.println("5");
+        lcd.print("5");
+        break;
+      case 0xFF5AA5:
+        Serial.println("6");
+        lcd.print("6");
+        break;
+      case 0xFF42BD:
+        Serial.println("7");
+        lcd.print("7");
+        break;
+      case 0xFF4AB5:
+        Serial.println("8");
+        lcd.print("8");
+        break;
+      case 0xFF52AD:
+        Serial.println("9");
+        lcd.print("9");
+        break;
+      case 0xFFA25D:
+        Serial.println("CH-");
+        lcd.print("CH-");
+        break;
+      case 0xFF629D:
+        Serial.println("CH");
+        lcd.print("CH");
+        break;
+      case 0xFFE21D:
+        Serial.println("CH-");
+        lcd.print("CH-");
+        break;
+      case 0xFF22DD:
+        Serial.println("|<<");
+        lcd.print("|<<");
+        break;
+      case 0xFF02FD:
+        Serial.println(">>|");
+        lcd.print(">>|");
+        break;
+      case 0xFFC23D:
+        Serial.println(">|");
+        lcd.print(">|");
+        break;
+      case 0xFFE01F:
+        Serial.println("-");
+        lcd.print("-");
+        break;
+      case 0xFFA857:
+        Serial.println("+");
+        lcd.print("+");
+        break;
+      case 0xFF906F:
+        Serial.println("EQ");
+        lcd.print("EQ");
+        break;
+      case 0xFF9867:
+        Serial.println("100+");
+        lcd.print("100+");
+        break;
+      case 0xFFB04F:
+        Serial.println("200+");
+        lcd.print("200+");
+        break;
+
       default:
         lcd.print("???");
         Serial.print("not registered yet: ");
